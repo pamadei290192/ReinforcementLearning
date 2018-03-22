@@ -6,7 +6,6 @@ Created on Wed Mar 21 21:10:26 2018
 @author: philippeamadei
 """
 import gym
-import tensorflow as tf
 import numpy as np
 import tensorflow as tf
 from tensorflow.contrib.layers import fully_connected
@@ -14,12 +13,13 @@ from tensorflow.contrib.layers import fully_connected
 gym.envs.register(
     id='CartPoleLong-v0',
     entry_point='gym.envs.classic_control:CartPoleEnv',
-    max_episode_steps=500,
-    reward_threshold=475.0,
+    max_episode_steps=200,
+    reward_threshold=195.0,
 )
 
 env = gym.make('CartPoleLong-v0')
-env = gym.wrappers.Monitor(env, '/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/PoleCart/VideoRecord', video_callable=lambda episode_id: episode_id%10==0)
+
+env = gym.wrappers.Monitor(env, '/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/PoleCart/VideoRecord/', video_callable=lambda episode_id: episode_id%100==0)
 
 obs = env.reset()
 
@@ -91,6 +91,7 @@ with tf.Session() as sess:
                 current_rewards.append(reward) 
                 current_gradients.append(gradients_val)
                 if done:
+                    print(str(step))
                     break
                 all_rewards.append(current_rewards) 
                 all_gradients.append(current_gradients)
@@ -107,4 +108,4 @@ with tf.Session() as sess:
             feed_dict[grad_placeholder] = mean_gradients
         sess.run(training_op, feed_dict=feed_dict) 
         if iteration % save_iterations == 0:
-            saver.save(sess, "/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/PoleCart/my_policy_net_pg.ckpt")
+            saver.save(sess, "/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/PoleCart/Checkpoint/CartPoleSave.ckpt")
