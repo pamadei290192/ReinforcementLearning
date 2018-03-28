@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/MountainCar/Checkpoint/model.ckpt"
+all_model_checkpoint_paths: "/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/MountainCar/Checkpoint/model.ckpt"

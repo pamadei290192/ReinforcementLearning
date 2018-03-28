@@ -1,2 +1,2 @@
-model_checkpoint_path: "/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/PoleCart/Checkpoint/CartPoleSave.ckpt"
-all_model_checkpoint_paths: "/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/PoleCart/Checkpoint/CartPoleSave.ckpt"
+model_checkpoint_path: "/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/PoleCart/Checkpoint/model.ckpt"
+all_model_checkpoint_paths: "/Users/philippeamadei/Desktop/MachineLearning/ReinforcementLearning/PoleCart/Checkpoint/model.ckpt"
